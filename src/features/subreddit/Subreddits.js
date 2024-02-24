@@ -37,6 +37,7 @@ export default function SubReddits () {
         target.classList.add('but-card-active');
         setActive(target)
         dispatch(loadPosts(url));
+        window.scrollTo(0,0)
         navigate("/")
         document.querySelector(".sub-head").classList.remove("toggle-menu")
         document.querySelector(".content-overlay").classList.remove("show")
