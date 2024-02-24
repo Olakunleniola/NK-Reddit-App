@@ -10,7 +10,7 @@ export  const  getSubReddits = async () =>  {
 }
 
 export const getSubredditsPost = async (subredditUrl) => {
-    const response  = await fetch(`${url}${subredditUrl}new.json`);
+    const response  = await fetch(`${url}${subredditUrl}.json`);
     const data = await response.json();
     
     const posts = data.data.children.map(post => {
