@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../features/posts/postSlice";
-import { DarkModeIcon, LightMode, MenuIcon, RedditLogo } from "./SvgIcons";
+import { DarkModeIcon, LightMode, MenuIcon, RedditLogo, SearchIcon} from "./SvgIcons";
 import { getDark, setDark } from "../features/posts/postSlice";
 import { useParams, useNavigate } from "react-router";
 
@@ -112,10 +112,7 @@ export function Header () {
                     value={input || ''}
                     onChange={handleChange}
                 />
-                <button 
-                    className="material-symbols-outlined" 
-                    id="search-logo"
-                >search</button>
+                <button id="search-logo"><SearchIcon/></button>
             </form>
 
             <div className="mode">
