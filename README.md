@@ -33,6 +33,8 @@ To run the Reddit App locally, follow these steps:
     ```
 + Open the browser and navigate to http://localhost:3000 to view the application.
 
++ If you prefer not to set up your own environment, you can also view the live version of the app at https://nk-reddit-app.onrender.com/.
+
 ## Usage
 1. Select a subreddit from the menu tab to browse posts and comments.
 2. Click on individual posts to view detailed information and comments.
