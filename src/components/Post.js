@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card } from "./Card";
 import { Comments } from "../features/comments/Comments";
 import {
@@ -9,17 +10,37 @@ import {
 import { Link } from "react-router-dom";
 
 
-export function Post({post, handleUpvote, handleDownvote, showComments, upvote, downvote, handleClick, show}) {
+export function Post({
+     post,
+     showComments, 
+     handleClick, 
+     show,
+    }) {
+        
+    const [upvote, setUpvote] = useState(false);
+    const [downvote, setDownvote] = useState(false);
+
+    const handleUpvote = (e) => {
+        if(upvote) {setUpvote(false)}
+        else if(downvote){setUpvote(true);setDownvote(false)}
+        else {setUpvote(true)}    
+    }
+    
+    const handleDownvote = () => {
+         if(downvote) {setDownvote(false);}
+         else if(upvote){setUpvote(false);setDownvote(true)}
+         else {setDownvote(true)}    
+    }
     
     return (
         <>
             <article className="card">
                 <div className="vote-container">
-                    <button className={`up ${upvote && 'upvote' }`}  onClick={() => handleUpvote()}>
+                    <button className={`up ${upvote && "upvote"}`} onClick={(e) => handleUpvote(e)} >
                         {upvote ? <UpvoteActive /> : <UpvoteNotActive/>}
                     </button>
                     <p className={`upvotes ${ upvote || downvote ? !downvote ? 'upvote': 'downvote' : ''}`}>{post.likes}</p>
-                    <button className={`down ${downvote && 'downvote' }`} onClick={() =>handleDownvote()}>
+                    <button className={`down ${downvote && 'downvote' }`} onClick={(e) =>handleDownvote(e)}>
                         {downvote ? <DownvoteActive /> : <DownvoteNotActive/>}
                     </button>
                 </div>

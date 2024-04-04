@@ -15,11 +15,11 @@ export function Header () {
     const navigete = useNavigate();
 
     // Add and remove dark mode styles if dark is true of false
-    useEffect(() => {
+    useEffect(() => {   
         if(dark) {
             document.body.classList.add("dark")
             document.querySelector(".search").classList.add("search-dark"); 
-            document.querySelector(".mini").classList.add("mini-dark"); 
+            document.querySelector(".mini").classList.add("mini-dark");
             document.querySelector(".reddit").classList.add("reddit-dark"); 
             document.querySelector(".mode").classList.add("mode-dark"); 
             document.querySelector("header").classList.add("dark"); 
@@ -33,7 +33,7 @@ export function Header () {
             document.querySelector("header").classList.remove("dark"); 
             document.querySelector(".sub-head").classList.remove("dark", "mode-dark"); 
         }
-    }, [dark]);
+    }, [dark]); 
 
     // Add an event listener to show go top button at certain scroll level 
     useEffect(() => {
